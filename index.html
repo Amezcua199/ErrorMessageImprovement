@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Shop - ¡Regístrate Rapidamente!</title>
+    <meta name="description" content="Formulario de registro rápido para Software Shop, productos y portafolios tecnológicos.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        softwarePurple: '#6B3FA0',
+                        softwareDarkPurple: '#4A2A70',
+                        softwareLightBg: '#F8F9FA'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :focus-visible {
+            outline: 3px solid #D97706 !important;
+            outline-offset: 3px !important;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900 min-h-full flex flex-col justify-between antialiased relative">
+
+    <aside aria-label="Enlaces rápidos flotantes">
+        <!-- Pestaña izquierda: Agéndate -->
+        <div class="fixed left-0 top-1/3 z-40 bg-[#6B3FA0] text-white rounded-r-lg shadow-lg flex items-center py-3 px-2 cursor-pointer hover:bg-[#583184] transition-colors" role="button" tabindex="0" aria-label="Agéndate">
+            <span class="writing-mode-vertical text-sm font-bold tracking-wider uppercase transform -rotate-90 origin-center my-6">Agéndate</span>
+            <svg class="w-4 h-4 ml-1 transform -rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+        </div>
+
+        <!-- Pestaña derecha: Cotizar -->
+        <div class="fixed right-0 top-1/3 z-40 bg-[#6B3FA0] text-white rounded-l-lg shadow-lg flex flex-col items-center py-4 px-2 cursor-pointer hover:bg-[#583184] transition-colors" role="button" tabindex="0" aria-label="Cotizar">
+            <svg class="w-5 h-5 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+            <span class="writing-mode-vertical text-sm font-bold tracking-wider uppercase transform rotate-90 origin-center my-6">Cotizar</span>
+        </div>
+
+        <!-- Botón flotante de WhatsApp -->
+        <div class="fixed right-6 bottom-6 z-40 bg-emerald-600 hover:bg-emerald-700 text-white p-3.5 rounded-full shadow-2xl transition-transform hover:scale-110 cursor-pointer" role="button" tabindex="0" aria-label="Abrir chat de WhatsApp">
+            <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+        </div>
+    </aside>
+
+    <!-- Encabezado / Barra de Navegación -->
+    <header class="bg-white shadow-sm border-b border-slate-300" role="banner">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap justify-between items-center">
+            <!-- Logo Software Shop -->
+            <div class="flex items-center">
+                <a href="#" class="focus:outline-none" aria-label="Software Shop - Inicio">
+                    <div class="border-2 border-[#6B3FA0] rounded-full px-4 py-1.5 flex flex-col items-center">
+                        <span class="text-[#6B3FA0] font-black text-lg tracking-tight">Software</span>
+                        <span class="text-[#6B3FA0] font-bold text-sm tracking-widest flex items-center gap-0.5">SHOP <span class="text-sm">↗</span></span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Navegación superior con iconos -->
+            <nav class="flex items-center gap-4 md:gap-8 text-slate-800 text-sm font-semibold overflow-x-auto py-2" role="navigation" aria-label="Menú principal">
+                <a href="#" class="flex flex-col items-center hover:text-[#6B3FA0] transition-colors focus:outline-none">
+                    <svg class="w-5 h-5 mb-1 text-[#6B3FA0]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                    Portafolios
+                </a>
+                <a href="#" class="flex flex-col items-center hover:text-[#6B3FA0] transition-colors focus:outline-none">
+                    <svg class="w-5 h-5 mb-1 text-[#6B3FA0]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                    Industrias
+                </a>
+                <a href="#" class="flex flex-col items-center hover:text-[#6B3FA0] transition-colors focus:outline-none">
+                    <svg class="w-5 h-5 mb-1 text-[#6B3FA0]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                    Asociados
+                </a>
+                <a href="#" class="flex flex-col items-center hover:text-[#6B3FA0] transition-colors focus:outline-none">
+                    <svg class="w-5 h-5 mb-1 text-[#6B3FA0]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+                    Pagos
+                </a>
+                <a href="#" class="flex flex-col items-center hover:text-[#6B3FA0] transition-colors focus:outline-none">
+                    <svg class="w-5 h-5 mb-1 text-[#6B3FA0]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    Contacto
+                </a>
+                <a href="#" class="flex flex-col items-center hover:text-[#6B3FA0] transition-colors focus:outline-none">
+                    <svg class="w-5 h-5 mb-1 text-[#6B3FA0]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                    Portales
+                </a>
+                <a href="#" class="flex flex-col items-center hover:text-[#6B3FA0] transition-colors focus:outline-none">
+                    <svg class="w-5 h-5 mb-1 text-[#6B3FA0]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    Idioma
+                </a>
+                <a href="#" class="flex flex-col items-center hover:text-[#6B3FA0] transition-colors focus:outline-none">
+                    <svg class="w-5 h-5 mb-1 text-[#6B3FA0]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    Buscar
+                </a>
+                <a href="#" class="flex flex-col items-center hover:text-[#6B3FA0] transition-colors focus:outline-none">
+                    <svg class="w-5 h-5 mb-1 text-[#6B3FA0]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                    Entrar
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="bg-gradient-to-r from-indigo-900 via-purple-900 to-[#6B3FA0] py-16 px-4 text-white shadow-inner">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-8 text-center sm:text-left">
+            <div class="flex-shrink-0">
+                <svg class="w-24 h-24 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z"/>
+                </svg>
+            </div>
+            <div>
+                <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-2">Regístrate</h1>
+                <p class="text-lg md:text-xl text-purple-100">
+                    en Software Shop y disfruta del<br class="hidden sm:inline"> contenido que tenemos para ti.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contenido Principal -->
+    <main class="max-w-4xl w-full mx-auto px-4 py-12 flex-grow" id="main-content">
+        
+        <h1 class="text-3xl md:text-4xl font-bold text-center text-slate-900 mb-10" tabindex="0">
+            ¡Regístrate Rapidamente!
+        </h1>
+
+        <form id="contactForm" novalidate class="space-y-5">
+            
+            <!-- Fila 1 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                    <label for="tipoEntidad" class="block text-base font-bold text-slate-800 mb-1.5">
+                        Sel. Tipo Entidad <span class="text-red-600 font-bold">*</span>
+                    </label>
+                    <select 
+                        id="tipoEntidad" 
+                        name="tipoEntidad" 
+                        class="w-full px-4 py-3 bg-slate-100 border border-slate-400 rounded-lg text-slate-900 text-base focus:bg-white focus:border-[#6B3FA0] transition-colors"
+                    >
+                        <option value="">Seleccione una opción</option>
+                        <option value="universidad">Universidad / Academia</option>
+                        <option value="empresa">Empresa Privada</option>
+                        <option value="gobierno">Entidad Gubernamental</option>
+                    </select>
+                    <span id="error-tipoEntidad" class="text-sm text-red-600 font-bold mt-2 hidden flex items-center gap-1">
+                        ⚠️ Este campo es obligatorio.
+                    </span>
+                </div>
+                <div>
+                    <label for="entidadEmpresa" class="block text-base font-bold text-slate-800 mb-1.5">
+                        Entidad / Empresa <span class="text-red-600 font-bold">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="entidadEmpresa" 
+                        name="entidadEmpresa" 
+                        placeholder="Ej. Universidad de Colima"
+                        class="w-full px-4 py-3 bg-slate-100 border border-slate-400 rounded-lg text-slate-900 text-base placeholder-slate-600 focus:bg-white focus:border-[#6B3FA0] transition-colors"
+                    >
+                    <span id="error-entidadEmpresa" class="text-sm text-red-600 font-bold mt-2 hidden flex items-center gap-1">
+                        ⚠️ Por favor, ingresa tu entidad o empresa.
+                    </span>
+                </div>
+            </div>
+
+            <!-- Fila 2 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                    <label for="nombre" class="block text-base font-bold text-slate-800 mb-1.5">
+                        Nombre / Nome <span class="text-red-600 font-bold">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="nombre" 
+                        name="nombre" 
+                        placeholder="Ej. Rigoberto"
+                        class="w-full px-4 py-3 bg-slate-100 border border-slate-400 rounded-lg text-slate-900 text-base placeholder-slate-600 focus:bg-white focus:border-[#6B3FA0] transition-colors"
+                    >
+                    <span id="error-nombre" class="text-sm text-red-600 font-bold mt-2 hidden flex items-center gap-1">
+                        ⚠️ El nombre es obligatorio.
+                    </span>
+                </div>
+                <div>
+                    <label for="apellido" class="block text-base font-bold text-slate-800 mb-1.5">
+                        Apellido / Sobrenome <span class="text-red-600 font-bold">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="apellido" 
+                        name="apellido" 
+                        placeholder="Ej. Domínguez"
+                        class="w-full px-4 py-3 bg-slate-100 border border-slate-400 rounded-lg text-slate-900 text-base placeholder-slate-600 focus:bg-white focus:border-[#6B3FA0] transition-colors"
+                    >
+                    <span id="error-apellido" class="text-sm text-red-600 font-bold mt-2 hidden flex items-center gap-1">
+                        ⚠️ El apellido es obligatorio.
+                    </span>
+                </div>
+            </div>
+
+            <!-- Fila 3 -->
+            <div>
+                <label for="ciudad" class="block text-base font-bold text-slate-800 mb-1.5">
+                    Ciudad / Cidade <span class="text-red-600 font-bold">*</span>
+                </label>
+                <input 
+                    type="text" 
+                    id="ciudad" 
+                    name="ciudad" 
+                    placeholder="Ej. Colima"
+                    class="w-full px-4 py-3 bg-slate-100 border border-slate-400 rounded-lg text-slate-900 text-base placeholder-slate-600 focus:bg-white focus:border-[#6B3FA0] transition-colors"
+                >
+                <span id="error-ciudad" class="text-sm text-red-600 font-bold mt-2 hidden flex items-center gap-1">
+                    ⚠️ La ciudad es obligatoria.
+                </span>
+            </div>
+
+            <!-- Fila 4 -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
+                <div class="md:col-span-3">
+                    <label for="indicativo" class="block text-base font-bold text-slate-800 mb-1.5">
+                        Indicativo <span class="text-red-600 font-bold">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="indicativo" 
+                        name="indicativo" 
+                        placeholder="Ej. +52"
+                        class="w-full px-4 py-3 bg-slate-100 border border-slate-400 rounded-lg text-slate-900 text-base placeholder-slate-600 focus:bg-white focus:border-[#6B3FA0] transition-colors"
+                    >
+                    <span id="error-indicativo" class="text-sm text-red-600 font-bold mt-2 hidden flex items-center gap-1">
+                        ⚠️ Requerido.
+                    </span>
+                </div>
+                <div class="md:col-span-6">
+                    <label for="telefono" class="block text-base font-bold text-slate-800 mb-1.5">
+                        Teléfono / Celular / Fone <span class="text-red-600 font-bold">*</span>
+                    </label>
+                    <input 
+                        type="tel" 
+                        id="telefono" 
+                        name="telefono" 
+                        placeholder="Ej. 3123161075"
+                        class="w-full px-4 py-3 bg-slate-100 border border-slate-400 rounded-lg text-slate-900 text-base placeholder-slate-600 focus:bg-white focus:border-[#6B3FA0] transition-colors"
+                    >
+                    <span id="error-telefono" class="text-sm text-red-600 font-bold mt-2 hidden flex items-center gap-1">
+                        ⚠️ El teléfono es obligatorio.
+                    </span>
+                </div>
+                <div class="md:col-span-3">
+                    <label for="extension" class="block text-base font-bold text-slate-800 mb-1.5">
+                        Ext./Anexo/Extensão
+                    </label>
+                    <input 
+                        type="text" 
+                        id="extension" 
+                        name="extension" 
+                        placeholder="Ej. 104"
+                        class="w-full px-4 py-3 bg-slate-100 border border-slate-400 rounded-lg text-slate-900 text-base placeholder-slate-600 focus:bg-white focus:border-[#6B3FA0] transition-colors"
+                    >
+                </div>
+            </div>
+
+            <!-- Fila 5 -->
+            <div>
+                <label for="email" class="block text-base font-bold text-slate-800 mb-1.5">
+                    E-mail <span class="text-red-600 font-bold">*</span>
+                </label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    placeholder="ejemplo@correo.com"
+                    class="w-full px-4 py-3 bg-slate-100 border border-slate-400 rounded-lg text-slate-900 text-base placeholder-slate-600 focus:bg-white focus:border-[#6B3FA0] transition-colors"
+                >
+                <span id="error-email" class="text-sm text-red-600 font-bold mt-2 hidden flex items-center gap-1">
+                    ⚠️ El correo electrónico es obligatorio.
+                </span>
+            </div>
+
+            <!-- Pregunta de Radio Buttons -->
+            <fieldset class="pt-4 pb-2">
+                <legend class="text-base md:text-lg font-bold text-[#6B3FA0] text-center w-full mb-3">
+                    ¿Deseas recibir correos con información de los productos del portafolio de tu interés?
+                </legend>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                    <label class="flex items-center gap-2 cursor-pointer text-base font-semibold text-slate-900">
+                        <input type="radio" name="recibirCorreos" value="si" class="w-5 h-5 text-[#6B3FA0] focus:ring-[#6B3FA0]">
+                        Sí, Gracias
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer text-base font-semibold text-slate-900">
+                        <input type="radio" name="recibirCorreos" value="no" class="w-5 h-5 text-[#6B3FA0] focus:ring-[#6B3FA0]">
+                        No, Gracias
+                    </label>
+                </div>
+            </fieldset>
+
+            <!-- Botón Registrar Información -->
+            <div class="pt-4">
+                <button 
+                    type="submit" 
+                    class="w-full py-4 bg-[#6B3FA0] hover:bg-[#583184] text-white font-bold rounded-lg shadow-md transition-all text-lg focus:outline-none focus:ring-4 focus:ring-amber-500"
+                >
+                    Registrar Información
+                </button>
+            </div>
+
+        </form>
+
+        <!-- Texto inferior con enlace -->
+        <div class="mt-8 text-center border-t border-slate-300 pt-6">
+            <p class="text-slate-900 text-sm md:text-base">
+                Conozcan nuestras <a href="#" class="text-[#6B3FA0] font-bold underline hover:text-purple-900 focus:outline-none">políticas de tratamiento de datos</a>.
+            </p>
+        </div>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="bg-slate-900 text-slate-200 py-6 text-center text-sm md:text-base" role="contentinfo">
+        <p>Software Shop © 2026 - Todos los derechos reservados. Accesibilidad WCAG AA/AAA.</p>
+    </footer>
+
+    <!-- POPUP de Error -->
+    <div 
+        id="errorModal" 
+        class="fixed inset-0 bg-slate-900/75 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+        aria-describedby="modalDesc"
+    >
+        <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full border-4 border-red-600 overflow-hidden transform transition-all">
+            <div class="bg-red-50 p-6 border-b border-red-200 flex items-start gap-4">
+                <svg class="w-8 h-8 text-red-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                </svg>
+                <div>
+                    <h2 id="modalTitle" class="text-2xl font-bold text-red-900">
+                        Error al enviar el formulario
+                    </h2>
+                </div>
+            </div>
+
+            <div class="p-6 space-y-4 text-slate-900 text-sm md:text-base" id="modalDesc">
+                <div class="space-y-3">
+                    <p id="diagnosticText">
+                        <strong class="text-slate-900">Diagnóstico:</strong> Faltan campos obligatorios por completar en el formulario.
+                    </p>
+                    <p class="bg-slate-100 p-4 rounded-lg border border-slate-300 text-sm md:text-base">
+                        <strong class="text-slate-900 block mb-1">Cómo solucionarlo:</strong>
+                        Por favor, revisa los campos marcados en rojo e ingresa la información requerida.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-slate-50 px-6 py-4 border-t border-slate-300 flex justify-end">
+                <button 
+                    type="button" 
+                    id="closeModalBtn"
+                    class="px-6 py-3 bg-red-700 hover:bg-red-800 text-white text-base font-bold rounded-lg shadow transition-colors focus:outline-none focus:ring-4 focus:ring-amber-500"
+                >
+                    Entendido, corregir ahora
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script de validación -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const errorModal = document.getElementById('errorModal');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+            const fields = form.querySelectorAll('input, select');
+            
+            let lastFocusedElement = null;
+
+            // Función para limpiar el estilo de error y ocultar el mensaje de texto de un campo
+            function clearError(field) {
+                field.classList.remove('border-red-600', 'bg-red-50');
+                field.classList.add('border-slate-400', 'bg-slate-100');
+                
+                const errorSpan = document.getElementById('error-' + field.id);
+                if (errorSpan) {
+                    errorSpan.classList.add('hidden');
+                }
+            }
+
+            // Función para mostrar el error visualmente y el mensaje de texto correspondiente
+            function showError(field) {
+                field.classList.remove('border-slate-400', 'bg-slate-100');
+                field.classList.add('border-red-600', 'bg-red-50');
+
+                const errorSpan = document.getElementById('error-' + field.id);
+                if (errorSpan) {
+                    errorSpan.classList.remove('hidden');
+                }
+            }
+
+            // Quitar el error en tiempo real apenas escriban o seleccionen algo válido
+            fields.forEach(field => {
+                field.addEventListener('input', function() {
+                    if (field.value.trim() !== "") {
+                        clearError(field);
+                    }
+                });
+                field.addEventListener('change', function() {
+                    if (field.value.trim() !== "") {
+                        clearError(field);
+                    }
+                });
+            });
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                let hasError = false;
+
+                // Revisar cada campo obligatorio
+                fields.forEach(field => {
+                    if (field.id === 'extension' || field.type === 'radio') return;
+
+                    if (!field.value.trim()) {
+                        showError(field);
+                        hasError = true;
+                    } else {
+                        clearError(field);
+                    }
+                });
+
+                if (hasError) {
+                    lastFocusedElement = document.activeElement;
+                    errorModal.classList.remove('hidden');
+                    closeModalBtn.focus();
+                } else {
+                    alert('¡Información registrada exitosamente!');
+                }
+            });
+
+            function closeModal() {
+                errorModal.classList.add('hidden');
+                if (lastFocusedElement) {
+                    lastFocusedElement.focus();
+                }
+                const firstError = form.querySelector('.border-red-600');
+                if (firstError) {
+                    firstError.focus();
+                }
+            }
+
+            closeModalBtn.addEventListener('click', closeModal);
+
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && !errorModal.classList.contains('hidden')) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
